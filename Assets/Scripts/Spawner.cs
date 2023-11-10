@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
         var enemy = Instantiate(_spawnEnemyTemplate, _spawnPoint, Quaternion.identity);
-        enemy.SetTarget(_targetEnemy);
+        enemy.SetTarget(_targetEnemy.transform);
     }
 
     private IEnumerator Generate()
