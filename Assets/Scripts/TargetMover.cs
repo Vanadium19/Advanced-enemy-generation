@@ -6,15 +6,16 @@ public class TargetMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    private Transform _targetTransform;
+    private GameObject _targetEnemy;
     
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _targetTransform.position, _speed * Time.deltaTime);    
+        transform.position = Vector3.MoveTowards(transform.position, _targetEnemy.transform.position,
+            _speed * Time.deltaTime);    
     }
 
-    public void SetTarget(Transform targetTransform)
+    public void SetTarget(GameObject targetEnemy)
     {
-        _targetTransform = targetTransform;
+        _targetEnemy = targetEnemy;
     }
 }
